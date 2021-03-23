@@ -23,7 +23,6 @@ class FuelTest:
         price.clear()
         price.send_keys("2.8")
         calculate = self.driver.find_element_by_xpath('//*[@id="content"]/table/tbody/tr[4]/td/input')
-
         calculate.click()
 
     def getMessage(self):

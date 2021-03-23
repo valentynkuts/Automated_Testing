@@ -1,3 +1,4 @@
+practiceselenium
 http://www.practiceselenium.com/
 
 Check Out
@@ -19,8 +20,6 @@ Let's Talk Tea
 4. Fill form: name, email, name, subject, message.
 5. Click button 'Submit'.
 
-
-
 Welcome
 
 1. Open 'http://www.practiceselenium.com/'
@@ -29,6 +28,7 @@ Welcome
 4. Close
 
 -------------------
+zalando
 https://www.zalando.pl/
 
 Registration
@@ -41,8 +41,17 @@ Registration
    to don't create a fake User.
 7. Move to 'https://www.zalando.pl/'
 ----------------------
-https://www.calculator.net/fuel-cost-calculator.html
+Calculator
+https://www.calculator.net
+
+Fuel cost calculator
 1. Open 'https://www.calculator.net/fuel-cost-calculator.html'
 2. Fill form: Trip Distance, Fuel Efficiency, Gas/Fuel Price.
 3. Click button Calculate
 4. Compare text information 
+
+Sleep calculator
+1. Open 'https://www.calculator.net'
+2. Fill search form.
+3. Click appeared link under search form 
+   and move to 'https://www.calculator.net/sleep-calculator.html'

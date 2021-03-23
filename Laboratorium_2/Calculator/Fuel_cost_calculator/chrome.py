@@ -1,7 +1,7 @@
 from fueltest import FuelTest
 from selenium import webdriver
 
-driver = webdriver.Chrome(executable_path='../webdriver/chromedriver')
+driver = webdriver.Chrome(executable_path='../../webdriver/chromedriver')
 f = FuelTest(driver)
 f.open()
 f.CalculateCost()

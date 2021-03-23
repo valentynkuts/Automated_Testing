@@ -37,8 +37,6 @@ class Practiceselenium:
         self.driver.find_element_by_name("message").send_keys("Let's talk")
 
     def clickSubmitLetTalkTea(self):
-        # self.driver.find_element_by_class_name("form-submit").click()
-        # self.driver.find_element_by_xpath('// *[ @ id = "form_78ea690540a24bd8b9dcfbf99e999fea"] / div[1] / div[5] / input').click()
         self.driver.find_element_by_xpath('//*[@id="form_78ea690540a24bd8b9dcfbf99e999fea"]/div[1]/div[5]/input').click()
 
 
@@ -52,7 +50,6 @@ class Practiceselenium:
         self.driver.find_element_by_id("verification_code").send_keys("verification_code")
 
     def clickSubmitCheckOut(self):
-        # self.driver.find_element_by_class_name("btn btn-primary").click()
         self.driver.find_element_by_xpath('//*[@id="wsb-element-00000000-0000-0000-0000-000452010925"]/div/div/form/div/button').click()
 
     def clickCancel(self):

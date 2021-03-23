@@ -37,7 +37,6 @@ class Zalando:
         input.send_keys(password)
 
     def clickRadio(self):
-        # Select(self.driver.find_element_by_id("register.gender-zds_radio_mens_1"))
         # self.driver.find_element_by_id("register.gender-zds_radio_mens_1").click()
         self.driver.find_element_by_xpath('//*[@id="register.gender-zds_radio_womens_0"]').click()
 
