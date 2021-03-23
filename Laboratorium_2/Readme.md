@@ -1,4 +1,4 @@
-practiceselenium
+Practiceselenium
 http://www.practiceselenium.com/
 
 Check Out
@@ -28,7 +28,7 @@ Welcome
 4. Close
 
 -------------------
-zalando
+Zalando
 https://www.zalando.pl/
 
 Registration

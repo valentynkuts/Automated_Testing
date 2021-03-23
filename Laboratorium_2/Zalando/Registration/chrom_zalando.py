@@ -1,6 +1,6 @@
 from zalando import Zalando
 from selenium import webdriver
-import time
+
 
 name = 'John'
 lastname = 'Hilton'
