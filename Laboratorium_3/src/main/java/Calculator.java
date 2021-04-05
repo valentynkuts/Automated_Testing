@@ -1,6 +1,24 @@
 package pl.pjatk.unit_tests;
 
 public class Calculator {
+     // ---- Lab 3 ----
+     public static boolean isPrimeNum(int number) {
+         boolean isItPrime = true;
+         if (number <= 1) {
+             isItPrime = false;
+             return isItPrime;
+         } else {
+             for (int i = 2; i <= number / 2; i++) {
+                 if (number % i == 0) {
+                     isItPrime = false;
+                     break;
+                 }
+             }
+             return isItPrime;
+         }
+     }
+
+    // ---- Lab 1 ----
     public static long power(int a, int b) {
         if (a >= 0 && b >= 0) {
             if (b == 0)
