@@ -1,4 +1,4 @@
-package pl.pjatk.unit_tests;
+package exercise;
 
 import org.apache.commons.collections4.CollectionUtils;
 

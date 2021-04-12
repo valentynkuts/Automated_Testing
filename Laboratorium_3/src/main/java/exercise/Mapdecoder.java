@@ -1,4 +1,4 @@
-package pl.pjatk.unit_tests;
+package exercise;
 
 import java.util.HashMap;
 

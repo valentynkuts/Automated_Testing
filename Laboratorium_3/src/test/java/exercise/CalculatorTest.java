@@ -1,8 +1,8 @@
-package pl.pjatk.unit_tests.test;
+package exercise;
 
 import org.junit.Assert;
 import org.junit.Test;
-import pl.pjatk.unit_tests.Calculator;
+import exercise.Calculator;
 
 public class CalculatorTest {
     // ---- Lab 3 ----
