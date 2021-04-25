@@ -7,7 +7,7 @@ class TestWindows:
     def test_notWindows(self):
         nw = Testowa('Apple')
         description = "Something wrong.No description"
-        assert nw.userCommandDescription('') == description
+        assert nw.userCommandDescription('time /?') == description
 
     def test_wrongCommand(self):
         description = "Something wrong.No description"

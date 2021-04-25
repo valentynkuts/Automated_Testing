@@ -7,7 +7,7 @@ class TestLinux:
     def test_notLinux(self):
         nl = Testowa('Apple')
         description = "Something wrong.No description"
-        assert nl.userCommandDescription('') == description
+        assert nl.userCommandDescription('ls -a') == description
 
     def test_wrongCommand(self):
         description = "Something wrong.No description"
