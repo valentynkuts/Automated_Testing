@@ -1,12 +1,10 @@
 # maven
-'''
+```bash
 сd Laboratorium_3
 
 mvn clean test
 
-'''
-
-
+```
 
 Added method strOfNumToAverage() to class StringUtils and 
 4 tests to class StringUtilsTest.
