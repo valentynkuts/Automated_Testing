@@ -18,6 +18,8 @@ class Phptravels:
                                                 '2]/div/div/div[1]/div/a/small')
         res.click()
 
+    # function waits for some time while the element is loaded
+    # when it is found it immediately executes
     def clickLink(self, timeout=3):
         start = time.monotonic()
         end = start + timeout
@@ -35,7 +37,6 @@ class Phptravels:
                 print("An exception occurred")
 
     def fillForm(self):
-        # self.driver.get("https://www.phptravels.net/supplier")
         # switch to new opened tab
         self.driver.switch_to_window(self.driver.window_handles[1])
         r = self.driver.find_element_by_xpath("/html/body/div[2]/form[1]/div[1]/label[1]/input")
@@ -54,6 +55,5 @@ class Phptravels:
 driver = webdriver.Chrome(executable_path='webdriver/chromedriver')
 p = Phptravels(driver)
 p.open()
-p.clickLink(5)
-
+p.clickLink(10)
 p.fillForm()

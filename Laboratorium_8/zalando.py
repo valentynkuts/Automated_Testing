@@ -42,6 +42,8 @@ class Zalando:
     def clickSubmitRegisterForm(self):
         self.driver.find_element_by_xpath('//*[@id="section-register"]/div/form/div[7]/button').click()
 
+    # function waits for some time while the element is loaded
+    # when it is found it immediately executes
     def clickWporzandku(self, timeout=3):
         start = time.monotonic()
         end = start + timeout
@@ -71,7 +73,7 @@ driver = webdriver.Chrome(executable_path='webdriver/chromedriver')
 z = Zalando(driver)
 z.open()
 
-z.clickWporzandku(5)
+z.clickWporzandku(10)
 
 z.ToRegister()
 z.FillRegisterForm(name, lastname, email, password)
