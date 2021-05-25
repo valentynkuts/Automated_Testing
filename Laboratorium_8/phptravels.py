@@ -35,7 +35,9 @@ class Phptravels:
                 print("An exception occurred")
 
     def fillForm(self):
-        self.driver.get("https://www.phptravels.net/supplier")
+        # self.driver.get("https://www.phptravels.net/supplier")
+        # switch to new opened tab
+        self.driver.switch_to_window(self.driver.window_handles[1])
         r = self.driver.find_element_by_xpath("/html/body/div[2]/form[1]/div[1]/label[1]/input")
         r.clear()
         r.send_keys("supplier@phptravels.com")
@@ -53,4 +55,5 @@ driver = webdriver.Chrome(executable_path='webdriver/chromedriver')
 p = Phptravels(driver)
 p.open()
 p.clickLink(5)
+
 p.fillForm()
