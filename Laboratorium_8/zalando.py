@@ -77,6 +77,5 @@ z.clickWporzandku(10)
 
 z.ToRegister()
 z.FillRegisterForm(name, lastname, email, password)
-
 # z.clickRadio()
 # z.clickSubmitRegisterForm()
