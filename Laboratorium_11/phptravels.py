@@ -5,6 +5,7 @@ import time
 logger.add("debug.log", format="{time} {level} {message}", level="DEBUG",
            rotation="20 KB", compression="zip")
 
+
 class Phptravels:
     url = 'https://phptravels.com/demo/'
     driver = webdriver
@@ -37,6 +38,7 @@ class Phptravels:
                 if res:
                     print(res)
                     res.click()
+                    logger.info('click')
                     return 1
 
             except Exception as e:
@@ -48,12 +50,15 @@ class Phptravels:
         # switch to new opened tab
         # self.driver.switch_to_window(self.driver.window_handles[1])
         self.driver.switch_to.window(self.driver.window_handles[1])
+        logger.info('Swith to https://www.phptravels.net/supplier')
         r = self.driver.find_element_by_xpath("/html/body/div[2]/form[1]/div[1]/label[1]/input")
         r.clear()
         r.send_keys("supplier@phptravels.com")
+        logger.info('Enter email supplier@phptravels.com')
         r = self.driver.find_element_by_xpath("/html/body/div[2]/form[1]/div[1]/label[2]/input")
         r.clear()
         r.send_keys("demosupplier")
+        logger.info('Enter password demosupplier')
         self.driver.find_element_by_xpath('/html/body/div[2]/form[1]/button').click()
 
     def close(self):
@@ -64,7 +69,9 @@ class Phptravels:
 driver = webdriver.Chrome(executable_path='webdriver/chromedriver')
 p = Phptravels(driver)
 p.open()
+logger.info("Open https://phptravels.com/demo/")
 # p.clickLink1() # raise Exception
 p.clickLink(10)
 p.fillForm()
 # p.close()
+logger.info("Close")
