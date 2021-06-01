@@ -1,0 +1,23 @@
+{
+  "dir": {
+    "/s": "Lists every occurrence of the specified file name within the specified directory and all subdirectories..",
+    "/b": "Displays a bare list of directories and files, with no additional information. ."
+  },
+  "del": {
+    "/p": "Prompts for confirmation before deleting the specified file.",
+    "/f": "Forces deletion of read-only files."
+  },
+  "ping": {
+    "/t": "Specifies ping continue sending echo Request messages to the destination until interrupted.",
+    "/a": "Specifies reverse name resolution be performed on the destination IP address."
+  },
+  "cipher": {
+    "/c": "Displays information on the encrypted file.",
+    "/d": "Decrypts the specified files or directories."
+  },
+  "time": {
+    "/t": "Displays the current time without prompting you for a new time.",
+    "/?": "Displays help at the command prompt."
+  }
+}
+
