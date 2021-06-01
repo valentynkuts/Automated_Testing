@@ -2,4 +2,4 @@ language: python
 python:
   - 3.8
 script:
-  - pytest Laboratorium_6/test_linux.py
+  - cd Laboratorium_6 && pytest test_linux.py
