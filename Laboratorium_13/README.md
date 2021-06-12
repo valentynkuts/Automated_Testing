@@ -95,3 +95,4 @@ go get -u github.com/stretchr/testify
 go test -v
 
 ```
+![result](https://github.com/valentynkuts/tau/blob/main/Laboratorium_13/res.png)
