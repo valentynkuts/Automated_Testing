@@ -2,6 +2,7 @@ package main
 
 import (
 	"Laboratorium_13/books"
+	"errors"
 	"github.com/stretchr/testify/assert"
 	"testing"
 )
@@ -14,8 +15,19 @@ func TestGetBooks(t *testing.T) {
 	}
 }
 
+func TestEmptyBooksAsArgument(t *testing.T) {
+	err := books.InsertBook(books.Book{})
+	NoData := errors.New("No Data in the Book")
+	assert.Equal(t, err, NoData)
+}
+
+func TestEmptyStringAsArgument(t *testing.T) {
+	err := books.DeleteBook("")
+	EmptyString := errors.New("Empty String")
+	assert.Equal(t, err, EmptyString)
+}
+
 func TestInsertBooks(t *testing.T) {
-	//bks := []books.Book{}
 	bks1, _ := books.GetBooks()
 	myBks := []books.Book{
 		{Isbn: "171-1505255607", Title: "The Time Machine", Author: "H. G. Wells", Price: 5.99},
@@ -35,6 +47,17 @@ func TestInsertBooks(t *testing.T) {
 	}
 }
 
+func TestDeleteBook(t *testing.T) {
+	bks1, _ := books.GetBooks()
+	books.DeleteBook("373-3503261961")
+	bks2, _ := books.GetBooks()
+
+	res := len(bks1) - len(bks2)
+
+	assert.Equal(t, res, 1)
+
+}
+
 func TestGetOneBook(t *testing.T) {
 	b, _ := books.GetOneBook("171-1505255607")
 
@@ -45,25 +68,49 @@ func TestGetOneBook(t *testing.T) {
 
 }
 
+func TestGetBook(t *testing.T) {
+	_, err := books.GetOneBook("555-5503241965")
+
+	var NotFound error = errors.New("Not Found")
+
+	assert.Equal(t, err, NotFound)
+
+	nb := books.Book{Isbn: "555-5503241965", Title: "NodeJS", Author: "Mike Cantelon", Price: 17.22}
+	books.InsertBook(nb)
+
+	ab, _ := books.GetOneBook("555-5503241965")
+
+	assert.Equal(t, ab.Isbn, "555-5503241965")
+	assert.Equal(t, ab.Title, "NodeJS")
+	assert.Equal(t, ab.Author, "Mike Cantelon")
+	assert.Equal(t, ab.Price, 17.22)
+
+	//delete in order to avoid mistake if test will be repeated
+	books.DeleteBook("555-5503241965")
+
+}
+
 func TestUpdateBook(t *testing.T) {
-	ub := books.Book{Isbn: "474-4503261961", Title: "MongoDB", Author: "Dayley Brad", Price: 11.70}
+	nb := books.Book{Isbn: "101-1013261101", Title: "Xxxxxx", Author: "Xdddd Ybbb", Price: 10.10}
+	books.InsertBook(nb)
+
+	ab, _ := books.GetOneBook("101-1013261101")
+
+	assert.Equal(t, ab.Isbn, "101-1013261101")
+	assert.Equal(t, ab.Title, "Xxxxxx")
+	assert.Equal(t, ab.Author, "Xdddd Ybbb")
+	assert.Equal(t, ab.Price, 10.10)
+
+	ub := books.Book{Isbn: "101-1013261101", Title: "MongoDB", Author: "Dayley Brad", Price: 11.70}
 	books.UpdateBook(ub)
 
-	b, _ := books.GetOneBook("474-4503261961")
+	b, _ := books.GetOneBook("101-1013261101")
 
 	assert.Equal(t, b.Title, "MongoDB")
 	assert.Equal(t, b.Author, "Dayley Brad")
 	assert.Equal(t, b.Price, 11.70)
 
-}
-
-func TestDeleteBook(t *testing.T) {
-	bks1, _ := books.GetBooks()
-	books.DeleteBook("373-3503261961")
-	bks2, _ := books.GetBooks()
-
-	res := len(bks1) - len(bks2)
-
-	assert.Equal(t, res, 1)
+	//delete in order to avoid mistake if test will be repeated
+	books.DeleteBook("101-1013261101")
 
 }

@@ -83,6 +83,9 @@ Use the ```mgo.Dial``` to create a session. Assign this to the variable ```DB```
 #### models.go
 Function for CRUD 
 
+# info about testing
+[https://golang.org/pkg/testing/](https://golang.org/pkg/testing/)
+
 # setup
 
 ```

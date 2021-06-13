@@ -13,7 +13,6 @@ var Books *mgo.Collection
 
 func init() {
 	// get a mongo sessions
-	//s, err := mgo.Dial("mongodb://postman:postman001@localhost:27017/bookstore")
 	s, err := mgo.Dial("mongodb://book:book001@localhost:27017/bookstore")
 	if err != nil {
 		panic(err)

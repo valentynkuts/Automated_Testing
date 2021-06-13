@@ -4,7 +4,6 @@ import (
 	"Laboratorium_13/config"
 	"errors"
 	"gopkg.in/mgo.v2/bson"
-	"unsafe"
 )
 
 type Book struct {
@@ -16,15 +15,6 @@ type Book struct {
 
 func GetBooks() ([]Book, error) {
 	bks := []Book{}
-	err := config.Books.Find(bson.M{}).All(&bks)
-	if err != nil {
-		//log.Fatal(err)
-		return nil, err
-	}
-	return bks, nil
-}
-
-func GetBooks1(bks []Book) ([]Book, error) {
 	err := config.Books.Find(bson.M{}).All(&bks)
 	if err != nil {
 		return nil, err
@@ -62,16 +52,16 @@ func GetOneBook(isbn string) (Book, error) {
 	}
 	err := config.Books.Find(bson.M{"isbn": isbn}).One(&bk)
 	if err != nil {
-		return bk, err
+		return bk, errors.New("Not Found")
 	}
 	return bk, nil
 }
 
 func UpdateBook(bk Book) error {
-	//the empty struct itself takes no memory
-	if unsafe.Sizeof(bk) == 0 {
+	if (Book{} == bk) {
 		return errors.New("No Data in the Book")
 	}
+	
 	//if bk.Isbn == "" || bk.Title == "" || bk.Author == "" || bk.Price == 0{
 	//	return errors.New("No Data in the Book")
 	//}
