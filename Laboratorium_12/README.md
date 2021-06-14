@@ -16,11 +16,6 @@ close any open mongo connections, then restart with these commands:
 mongo
 ```
 
-in a new tab
-```
-mongod
-```
-
 #### create db
 ```
 use bookstore
